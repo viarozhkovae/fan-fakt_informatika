@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Современные мемы по информатике 🤖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.5); }
+            to { box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 40px rgba(255,255,255,0.8); }
+        }
+
+        .header h1 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2.5em;
+            color: white;
+            text-shadow: 4px 4px 0px #000;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        /* Timeline */
+        .timeline {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .timeline h2 {
+            color: #764ba2;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .timeline-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .timeline-item {
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            min-width: 150px;
+            transition: transform 0.3s;
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.1) rotate(3deg);
+        }
+
+        .timeline-year {
+            font-size: 1.8em;
+            font-weight: 900;
+            display: block;
+        }
+
+        .timeline-arrow {
+            font-size: 2em;
+            color: #f5576c;
+        }
+
+        /* Sections Grid */
+        .sections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .section-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .section-card h2 {
+            color: #f5576c;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Meme Cards */
+        .meme-card {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 3px solid #f5576c;
+        }
+
+        .meme-card h3 {
+            color: #764ba2;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .meme-card .year {
+            background: #f5576c;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .meme-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Facts List */
+        .fact-item {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s;
+        }
+
+        .fact-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .fact-item strong {
+            color: #764ba2;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .fact-icon {
+            font-size: 2em;
+            margin-right: 10px;
+        }
+
+        /* Interactive Elements */
+        .interactive-section {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .interactive-section h2 {
+            color: #764ba2;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+        }
+
+        .meme-generator {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        /* Quote */
+        .quote-section {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .quote-section blockquote {
+            font-size: 1.5em;
+            color: white;
+            font-style: italic;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .quote-section cite {
+            display: block;
+            margin-top: 15px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 30px;
+        }
+
+        .footer p {
+            font-size: 1.2em;
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-card, .timeline, .interactive-section, .quote-section {
+            animation: slideIn 0.8s ease-out;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.5em;
+            }
+            
+            .sections-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-container {
+                flex-direction: column;
+            }
+            
+            .timeline-arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        /* Floating emojis */
+        .floating-emoji {
+            position: fixed;
+            font-size: 2em;
+            animation: float 10s infinite ease-in-out;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🤖 СОВРЕМЕННЫЕ МЕМЫ ПО ИНФОРМАТИКЕ 💻</h1>
+            <p>📚 И ИНТЕРЕСНЫЕ ФАКТЫ ИЗ ИСТОРИИ ТЕХНОЛОГИЙ 🚀</p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline">
+            <h2>📈 ЭВОЛЮЦИЯ МЕМОВ</h2>
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <span class="timeline-year">1976</span>
+                    <span>Ричард Докинз придумал слово "мем"</span>
+                </div>
+                <span class="timeline-arrow">→</span>
+                <div class="timeline-item">
+                    <span class="timeline-year">1996</span>
+                    <span>Dancing Baby</span>
+                </div>
+                <span class="timeline-arrow">→</span>
+                <div class="timeline-item">
+                    <span class="timeline-year">2000</span>
+                    <span>Массовость</span>
+                </div>
+                <span class="timeline-arrow">→</span>
+                <div class="timeline-item">
+                    <span class="timeline-year">2026</span>
+                    <span>Универсальный язык</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Sections -->
+        <div class="sections-grid">
+            <!-- Block 1: History of Meme -->
+            <div class="section-card">
+                <h2>🎯 ОТКУДА ПОЯВИЛОСЬ СЛОВО "МЕМ"?</h2>
+                <div style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); padding: 20px; border-radius: 15px; margin-bottom: 15px;">
+                    <h3 style="color: #764ba2; margin-bottom: 10px;">📖 Ричард Докинз, 1976</h3>
+                    <p>Британский биолог придумал термин в книге <strong>"Эгоистичный ген"</strong></p>
+                </div>
+                <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); padding: 15px; border-radius: 10px; margin-bottom: 10px;">
+                    <p><strong>🔤 Происхождение:</strong> от греческого <em>"mimema"</em> (подражание)</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); padding: 15px; border-radius: 10px;">
+                    <p><strong>💡 Изначально:</strong> единица культурной информации, передающаяся от человека к человеку</p>
+                </div>
+                <div style="background: #f5576c; color: white; padding: 15px; border-radius: 10px; margin-top: 15px; text-align: center;">
+                    <strong>🤯 Интересно:</strong> Докинз не мог представить, что через 50 лет мемы захватят интернет!
+                </div>
+            </div>
+
+            <!-- Block 2: First Memes -->
+            <div class="section-card">
+                <h2>💃 ЛЕГЕНДАРНЫЕ МЕМЫ 90-Х</h2>
+                
+                <div class="meme-card">
+                    <span class="year">1996</span>
+                    <h3>🍼 Dancing Baby</h3>
+                    <div class="meme-image">👶</div>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✅ Один из первых вирусных интернет-мемов</li>
+                        <li>✅ 3D-анимация малыша, танцующего чечётку</li>
+                        <li>✅ Стал известен после сериала "Элли Макбил"</li>
+                        <li>✅ Также назывался "Baby Cha-Cha"</li>
+                    </ul>
+                </div>
+
+                <div class="meme-card">
+                    <span class="year">1998</span>
+                    <h3>🐹 Hamsterdance</h3>
+                    <div class="meme-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">🐹🎵</div>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✅ Сайт с танцующими хомяками</li>
+                        <li>✅ Один из первых вирусных сайтов</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Block 3: Tech Facts -->
+        <div class="section-card" style="margin-bottom: 30px;">
+            <h2>💻 УДИВИТЕЛЬНЫЕ ФАКТЫ ИЗ МИРА КОМПЬЮТЕРОВ</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="fact-item">
+                    <strong><span class="fact-icon">🖥️</span> Первый компьютер был размером с комнату!</strong>
+                    <p>ENIAC (1940-е) весил <strong>27 тонн</strong> и занимал огромное помещение</p>
+                </div>
+
+                <div class="fact-item">
+                    <strong><span class="fact-icon">💼</span> Первый портативный компьютер (1981)</strong>
+                    <p>Osborne Computer весил <strong>12 кг</strong> — это считалось "портативным"!</p>
+                </div>
+
+                <div class="fact-item">
+                    <strong><span class="fact-icon">☕</span> Первая веб-камера</strong>
+                    <p>Использовалась для <strong>слежения за кофейником</strong> — чтобы не ходить зря за кофе!</p>
+                </div>
+
+                <div class="fact-item">
+                    <strong><span class="fact-icon">💾</span> Первые ПК</strong>
+                    <p>Имели всего <strong>16 КБ памяти</strong> — сейчас этого не хватит даже на одну фотографию!</p>
+                </div>
+
+                <div class="fact-item">
+                    <strong><span class="fact-icon">📅</span> Первый IBM PC</strong>
+                    <p>Выпущен <strong>12 августа 1981 года</strong></p>
+                </div>
+
+                <div class="fact-item">
+                    <strong><span class="fact-icon"></span> Термин "bug" (ошибка)</strong>
+                    <p>Появился, когда <strong>мотылек</strong> попал в реле компьютера и вызвал сбой</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quote Section -->
+        <div class="quote-section">
+            <blockquote>
+                "История мемов — это история человеческой креативности и нашего стремления общаться, развлекать и соединяться"
+            </blockquote>
+            <cite>— Из истории интернет-культуры</cite>
+        </div>
+
+        <!-- Interactive Section -->
+        <div class="interactive-section">
+            <h2>🎮 ИНТЕРАКТИВНАЯ ЗОНА</h2>
+            <div class="meme-generator">
+                <p style="font-size: 1.3em; margin-bottom: 20px; color: #764ba2; font-weight: bold;">
+                    🎯 Проверь свои знания!
+                </p>
+                <button class="btn" onclick="showFact()">🎲 Случайный факт</button>
+                <button class="btn btn-secondary" onclick="showMeme()">😂 Случайный мем</button>
+                <div id="content-area" style="margin-top: 20px; padding: 20px; background: white; border-radius: 10px; min-height: 100px; display: flex; align-items: center; justify-content: center; font-size: 1.2em; color: #764ba2;">
+                    Нажми на кнопку! 👆
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>🚀 <strong>Мемы — это язык, который понимает каждый!</strong> 🌟</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">От Dancing Baby до TikTok: эволюция смеха 😄</p>
+        </div>
+    </div>
+
+    <script>
+        // Facts array
+        const facts = [
+            "🖥️ ENIAC весил 27 тонн!",
+            "💾 Первые ПК имели всего 16 КБ памяти",
+            "☕ Первая веб-камера следила за кофейником",
+            "🦟 Термин 'bug' появился из-за мотылька",
+            "💼 Первый портативный компьютер весил 12 кг",
+            "📅 Первый IBM PC выпущен 12 августа 1981",
+            "👶 Dancing Baby стал известен в 1996",
+            "🐹 Hamsterdance был одним из первых вирусных сайтов"
+        ];
+
+        const memes = [
+            "😂 Когда твой код работает с первого раза",
+            "🤯 404 Error: Sleep not found",
+            "💻 Ctrl+Alt+Del — три лучшие кнопки",
+            "🐛 Когда нашёл баг за 5 минут до сдачи",
+            "⌨️ Программист: 1% код, 99% гугление",
+            "🔄 Когда забыл сохранить файл",
+            "🌐 Internet Explorer: 'Я тоже могу быть быстрым!'",
+            "💾 'It works on my machine'"
+        ];
+
+        function showFact() {
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+            const contentArea = document.getElementById('content-area');
+            contentArea.style.animation = 'none';
+            setTimeout(() => {
+                contentArea.innerHTML = `<strong style="font-size: 1.3em;">${randomFact}</strong>`;
+                contentArea.style.animation = 'slideIn 0.5s ease-out';
+            }, 10);
+        }
+
+        function showMeme() {
+            const randomMeme = memes[Math.floor(Math.random() * memes.length)];
+            const contentArea = document.getElementById('content-area');
+            contentArea.style.animation = 'none';
+            setTimeout(() => {
+                contentArea.innerHTML = `<div style="text-align: center;"><div style="font-size: 3em; margin-bottom: 10px;">🎭</div><strong style="font-size: 1.3em;">${randomMeme}</strong></div>`;
+                contentArea.style.animation = 'slideIn 0.5s ease-out';
+            }, 10);
+        }
+
+        // Create floating emojis
+        function createFloatingEmoji() {
+            const emojis = ['💻', '🤖', '👾', '', '🖥️', '⌨️', '', ''];
+            const emoji = document.createElement('div');
+            emoji.className = 'floating-emoji';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = Math.random() * 100 + 'vw';
+            emoji.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            document.body.appendChild(emoji);
+            
+            setTimeout(() => {
+                emoji.remove();
+            }, 20000);
+        }
+
+        // Create floating emojis every 3 seconds
+        setInterval(createFloatingEmoji, 3000);
+
+        // Add click animation to cards
+        document.querySelectorAll('.section-card, .meme-card, .fact-item').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
